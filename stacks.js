@@ -10,7 +10,8 @@ class Stack {
     this.last = null;
     this.size = 0;
   }
-
+   //FILO
+  // first in last out
   //  f  a-b-c-d
   // o(1) constant time
   push(val) {
