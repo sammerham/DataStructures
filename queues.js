@@ -9,6 +9,8 @@ class Node {
 // FIFO
 // first in first out
 // o(1)
+'use strict'
+
 class Queue {
   constructor() {
     this.first = null;

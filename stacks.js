@@ -1,3 +1,5 @@
+'use strict'
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -30,8 +32,10 @@ class Stack {
   // o(1) constant time
   pop() {
     if (!this.first) return null;
-    if (this.size === 1) {
-      this.first = null;
+    // if (this.size === 1) {
+    //   this.last = null;
+    // }
+    if (this.first === this.last) {
       this.last = null;
     }
     let temp = this.first;
