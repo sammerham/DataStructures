@@ -43,6 +43,52 @@ class BinarySearchTree {
       }
     }
   }
+  find(val) {
+    if (!this.root) return false;
+    let curr = this.root; 
+    let found = false;
+    while (curr && !found) {
+      // go left 
+      if (val < curr.val) {
+        // traverse left
+        curr = curr.left;
+        // go right
+      } else if (curr > curr.val) {
+        // traverse right
+        curr = curr.right;
+      } else {
+        // found node
+        found = true;
+      }
+    }
+    // if not found
+    if (!found) return undefined;
+    return curr;
+  }
+
+  
+  contains(val) {
+    if (!this.root) return false;
+    let curr = this.root;
+    let found = false;
+    while (curr && !found) {
+      // go left 
+      if (val < curr.val) {
+        // traverse left
+        curr = curr.left;
+        // go right
+      } else if (curr > curr.val) {
+        // traverse right
+        curr = curr.right;
+      } else {
+        // found node
+        return true;
+      }
+    }
+    // if not found
+    return false;
+    
+  }
 };
 //      10
 //   5     13
@@ -56,4 +102,5 @@ tree.insert(11);
 tree.insert(2);
 tree.insert(16);
 tree.insert(7);
-console.log(tree);
+// console.log(tree);
+console.log(tree.find(7));
