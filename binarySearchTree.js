@@ -68,6 +68,32 @@ class BinarySearchTree {
     // return found node
     return curr;
   }
+
+  contains(val) {
+    // if BSt is empty
+    if (!this.root) return undefined;
+    let curr = this.root;
+    let found = false;
+    // loop until tree is empty or you find node
+    while (curr && !found) {
+      // if greater
+      if (val > curr.val) {
+        // traverse right
+        curr = curr.right;
+        // if smaller
+      } else if (val < curr.val) {
+        // traverse left
+        curr = curr.right;
+      } else {
+        // node is found return true;
+        return true;
+      }
+    }
+    // if finished traversing the entire tree and node is n't found, return false;
+    return false;
+    // return found node
+   
+  }
 };
 //      10
 //   5     13
@@ -82,4 +108,5 @@ tree.insert(2);
 tree.insert(16);
 tree.insert(7);
 // console.log(tree);
-console.log(tree.find(16));
+// console.log(tree.find(16));
+console.log(tree.contains(100));
