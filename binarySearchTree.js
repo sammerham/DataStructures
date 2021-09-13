@@ -44,50 +44,29 @@ class BinarySearchTree {
     }
   }
   find(val) {
-    if (!this.root) return false;
-    let curr = this.root; 
+    // if BSt is empty
+    if (!this.root) return undefined;
+    let curr = this.root;
     let found = false;
+    // loop until tree is empty or you find node
     while (curr && !found) {
-      // go left 
-      if (val < curr.val) {
-        // traverse left
-        curr = curr.left;
-        // go right
-      } else if (curr > curr.val) {
+      // if greater
+      if (val > curr.val) {
         // traverse right
         curr = curr.right;
+        // if smaller
+      } else if (val < curr.val) {
+        // traverse left
+        curr = curr.right;
       } else {
-        // found node
+        // else node is found change found boolean to true;
         found = true;
       }
     }
-    // if not found
+    // if finished traversing the entire tree and node is n't found, return undefined;
     if (!found) return undefined;
+    // return found node
     return curr;
-  }
-
-
-  contains(val) {
-    if (!this.root) return false;
-    let curr = this.root;
-    let found = false;
-    while (curr && !found) {
-      // go left 
-      if (val < curr.val) {
-        // traverse left
-        curr = curr.left;
-        // go right
-      } else if (curr > curr.val) {
-        // traverse right
-        curr = curr.right;
-      } else {
-        // found node
-        return true;
-      }
-    }
-    // if not found
-    return false;
-    
   }
 };
 //      10
@@ -103,5 +82,4 @@ tree.insert(2);
 tree.insert(16);
 tree.insert(7);
 // console.log(tree);
-// console.log(tree.find(7));
-console.log(tree.contains(7));
+console.log(tree.find(16));
