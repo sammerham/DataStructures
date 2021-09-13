@@ -66,7 +66,7 @@ class BinarySearchTree {
     return curr;
   }
 
-  
+
   contains(val) {
     if (!this.root) return false;
     let curr = this.root;
@@ -103,4 +103,5 @@ tree.insert(2);
 tree.insert(16);
 tree.insert(7);
 // console.log(tree);
-console.log(tree.find(7));
+// console.log(tree.find(7));
+console.log(tree.contains(7));
